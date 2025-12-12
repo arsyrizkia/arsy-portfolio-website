@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import LoadingProvider from "@/components/LoadingProvider";
+// import LoadingProvider from "@/components/LoadingProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,9 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} font-sans antialiased bg-white text-gray-900`}>
-        <LoadingProvider>
+        {/* <LoadingProvider> */}
           {children}
-        </LoadingProvider>
+        {/* </LoadingProvider> */}
       </body>
     </html>
   );
