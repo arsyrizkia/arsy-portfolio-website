@@ -81,47 +81,49 @@ export default function Experience() {
             </div>
           </div>
 
-          {/* Skills */}
-          <div>
-            <motion.h3
-              initial={{ x: 20, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-2xl font-semibold mb-8 tracking-tight-custom"
-            >
-              Technical Skills
-            </motion.h3>
+          {/* Skills - Sticky */}
+          <div className="lg:relative">
+            <div className="lg:sticky lg:top-8">
+              <motion.h3
+                initial={{ x: 20, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-2xl font-semibold mb-8 tracking-tight-custom"
+              >
+                Technical Skills
+              </motion.h3>
 
-            <div className="space-y-8">
-              {Object.entries(skills).map(([category, skillList], categoryIndex) => (
-                <motion.div
-                  key={category}
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-                >
-                  <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                    {category}
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {skillList.map((skill, skillIndex) => (
-                      <motion.span
-                        key={skill}
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
-                        whileHover={{ scale: 1.05 }}
-                        className="px-4 py-2 bg-white text-gray-700 font-medium text-sm rounded-lg card-shadow hover:card-shadow-hover transition-all cursor-default tracking-tight-custom"
-                      >
-                        {skill}
-                      </motion.span>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
+              <div className="space-y-6">
+                {Object.entries(skills).map(([category, skillList], categoryIndex) => (
+                  <motion.div
+                    key={category}
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+                  >
+                    <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                      {category}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {skillList.map((skill, skillIndex) => (
+                        <motion.span
+                          key={skill}
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          whileInView={{ scale: 1, opacity: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.3, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
+                          whileHover={{ scale: 1.05 }}
+                          className="px-3 py-1.5 bg-white text-gray-700 font-medium text-sm rounded-lg card-shadow hover:card-shadow-hover transition-all cursor-default tracking-tight-custom"
+                        >
+                          {skill}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

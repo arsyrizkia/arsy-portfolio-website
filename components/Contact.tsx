@@ -44,11 +44,11 @@ export default function Contact() {
           className="mb-12"
         >
           <a
-            href="mailto:arsy.rizkia@gmail.com"
+            href="mailto:arsyrizkiaruslan@gmail.com"
             className="group inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors tracking-tight-custom"
           >
             <Mail className="w-5 h-5" />
-            arsy.rizkia@gmail.com
+            arsyrizkiaruslan@gmail.com
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </motion.div>

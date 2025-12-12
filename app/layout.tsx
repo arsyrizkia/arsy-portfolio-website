@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   description: "Full-Stack Developer specializing in mobile and web applications. Building seamless digital experiences with modern technologies.",
   keywords: ["Full-Stack Developer", "Mobile Developer", "Web Developer", "React", "Node.js", "Kotlin", "Swift"],
   authors: [{ name: "Arsy Rizkia" }],
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
   openGraph: {
     title: "Arsy Rizkia | Full-Stack Developer",
     description: "Full-Stack Developer specializing in mobile and web applications.",

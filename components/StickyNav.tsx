@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Cpu } from "lucide-react";
+import Image from "next/image";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -15,6 +15,7 @@ export default function StickyNav() {
   const [isSticky, setIsSticky] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isDarkBackground, setIsDarkBackground] = useState(true); // Hero is dark
   const navRef = useRef<HTMLElement>(null);
   const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
@@ -27,6 +28,8 @@ export default function StickyNav() {
       }
 
       const sections = ["home", "projects", "experience", "contact"];
+
+      // Detect active section (for highlighting)
       for (const section of [...sections].reverse()) {
         const element = document.getElementById(section);
         if (element) {
@@ -36,6 +39,16 @@ export default function StickyNav() {
             break;
           }
         }
+      }
+
+      // Simple check: is the navbar still over the hero?
+      const heroElement = document.getElementById("home");
+      if (heroElement) {
+        const heroRect = heroElement.getBoundingClientRect();
+        const navbarY = window.innerHeight - 50; // navbar is ~50px from bottom
+
+        // If hero's bottom is above navbar position, navbar is past hero
+        setIsDarkBackground(heroRect.bottom > navbarY);
       }
     };
 
@@ -72,11 +85,12 @@ export default function StickyNav() {
       transition={{ duration: 0.5, delay: 0.6 }}
       className="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center justify-center gap-4 z-50"
     >
-      <Cpu
-        className={`w-5 h-5 transition-colors duration-300 ${
-          isSticky ? "text-gray-600" : "text-gray-800"
-        }`}
-        strokeWidth={1.5}
+      <Image
+        src="/logo.png"
+        alt="Logo"
+        width={28}
+        height={28}
+        className="rounded-md"
       />
       <nav
         ref={navRef}
@@ -117,8 +131,8 @@ export default function StickyNav() {
           >
             <span className={`transition-colors duration-200 ${
               pillIndex === index
-                ? "text-gray-900"
-                : "text-gray-500"
+                ? isDarkBackground ? "text-white" : "text-gray-900"
+                : isDarkBackground ? "text-white/70" : "text-gray-500"
             }`}>
               {item.name}
             </span>

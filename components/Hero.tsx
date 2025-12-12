@@ -23,8 +23,11 @@ export default function Hero() {
       id="home"
       className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden"
     >
-      {/* Background gradient - Mocha */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#BF9362] from-0% via-[#BF9362] via-80% to-[#f5ede4] to-100% -z-10" />
+      {/* Background gradient - Mocha to light cream/white */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#BF9362] from-0% via-[#BF9362] via-60% to-[#f5ede4] to-100% -z-10" />
+
+      {/* White fade at bottom to match projects section */}
+      <div className="absolute bottom-0 left-0 right-0 h-[30vh] bg-gradient-to-t from-[#f5ede4] to-transparent -z-10" />
 
       {/* Blur overlay at bottom of hero - covers everything */}
       <div
@@ -37,8 +40,6 @@ export default function Hero() {
         }}
       />
 
-      {/* White gradient overlay at bottom - smooth fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-[20vh] bg-gradient-to-t from-white from-0% via-white/80 via-40% to-transparent to-100% pointer-events-none z-30" />
 
       {/* Cloud behind the name text - slower parallax */}
       <motion.div

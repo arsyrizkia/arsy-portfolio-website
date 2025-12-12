@@ -6,7 +6,15 @@ import { projects } from "@/lib/data";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-6 bg-gray-50/50">
+    <section
+      id="projects"
+      className="pt-24 pb-24 px-6 relative"
+      style={{
+        background: `linear-gradient(to bottom, #f5ede4 0%, #f5ede4 100px, transparent 250px), url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920&q=80)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div

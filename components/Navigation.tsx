@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 const navItems = [
@@ -51,9 +52,15 @@ export default function Navigation() {
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link
           href="#home"
-          className="text-xl font-semibold tracking-tight-custom hover:text-[var(--accent-primary)] transition-colors"
+          className="hover:opacity-80 transition-opacity"
         >
-          AR
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={36}
+            height={36}
+            className="rounded-lg"
+          />
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">
