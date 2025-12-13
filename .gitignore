@@ -46,3 +46,4 @@ next-env.d.ts
 # pdf generation
 create-portfolio-pdf.js
 Arsy_Rizkia_Portfolio.pdf
+/.claude
